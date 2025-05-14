@@ -1,0 +1,44 @@
+/* Cement Department Dashboard Specific Styles */
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: #0c2e5a;
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Cement Products Grid */
+.cement-products-section {
+    margin-bottom: 30px;
+}
+
+.cement-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Product Card */
+/* Product Card */
+.tool-product-card {
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #009df8;
+    padding: 15px;
+}
+
+.tool-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #d0d0d0;
+}

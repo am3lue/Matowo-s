@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cement Department - Matowo Hardware</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/cement-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Matowo Hardware</h3>
+            </div>
+            <div class="sidebar-user">
+                <img src="images/user-avatar.png" alt="User Avatar" onerror="this.src='https://via.placeholder.com/80'">
+                <p>David Urassa</p>
+                <span class="user-role">Cement Department</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Inventory</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="#"><i class="fas fa-truck"></i> Orders</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="logout"><a href="trialchatgpt.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search cement products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="notification-icon"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <a href="#" class="message-icon"><i class="fas fa-envelope"></i><span class="badge">2</span></a>
+                </div>
+            </div>
+
+            <div class="dashboard-header">
+                <h1>Cement Department Dashboard</h1>
+                <p>Manage cement products, track inventory, and monitor sales</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon sales-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Today's Sales</h3>
+                        <p class="stat-value">$3,580</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inventory-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Stock</h3>
+                        <p class="stat-value">1,245 bags</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 5% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orders-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Orders</h3>
+                        <p class="stat-value">24</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Customers Today</h3>
+                        <p class="stat-value">42</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 15% from yesterday</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Cement Sales by Brand</h3>
+                    <canvas id="cementBrandChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Sales Trend</h3>
+                    <canvas id="weeklySalesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Cement Products Section -->
+            <div class="cement-products-section">
+                <div class="section-header">
+                    <h2>Cement Products</h2>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</button>
+                </div>
+                
+                <div class="cement-products-grid">
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/cement-1.jpg" alt="Portland Cement" onerror="this.src='https://via.placeholder.com/150?text=Portland+Cement'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Portland Cement</h3>
+                            <p class="product-type">General Purpose - 50kg</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $12.99 per bag</p>
+                                <p><span>Stock:</span> 450 bags</p>
+                                <p><span>Reorder at:</span> 100 bags</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/cement-2.jpg" alt="Rapid Hardening Cement" onerror="this.src='https://via.placeholder.com/150?text=Rapid+Hardening+Cement'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Rapid Hardening Cement</h3>
+                            <p class="product-type">Fast-setting - 50kg</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $15.99 per bag</p>
+                                <p><span>Stock:</span> 325 bags</p>
+                                <p><span>Reorder at:</span> 75 bags</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/cement-3.jpg" alt="Waterproof Cement" onerror="this.src='https://via.placeholder.com/150?text=Waterproof+Cement'">
+                            <span class="stock-badge low-stock">Low Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Waterproof Cement</h3>
+                            <p class="product-type">Water-resistant - 50kg</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $18.99 per bag</p>
+                                <p><span>Stock:</span> 85 bags</p>
+                                <p><span>Reorder at:</span> 100 bags</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/cement-4.jpg" alt="White Cement" onerror="this.src='https://via.placeholder.com/150?text=White+Cement'">
+                            <span class="stock-badge out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>White Cement</h3>
+                            <p class="product-type">Decorative - 50kg</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $20.99 per bag</p>
+                                <p><span>Stock:</span> 0 bags</p>
+                                <p><span>Reorder at:</span> 50 bags</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary disabled"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Sales Table -->
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Recent Cement Sales</h3>
+                    <a href="#" class="view-all">View All Sales</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2023-1045</td>
+                            <td>Today, 10:30 AM</td>
+                            <td>John Kamau</td>
+                            <td>Portland Cement</td>
+                            <td>50 bags</td>
+                            <td>$649.50</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-1044</td>
+                            <td>Today, 9:15 AM</td>
+                            <td>Mary Wanjiku</td>
+                            <td>Rapid Hardening Cement</td>
+                            <td>100 bags</td>
+                            <td>$1,599.00</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-1043</td>
+                            <td>Yesterday, 4:45 PM</td>
+                            <td>Peter Omondi</td>
+                            <td>Waterproof Cement</td>
+                            <td>75 bags</td>
+                            <td>$1,424.25</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-1042</td>
+                            <td>Yesterday, 2:30 PM</td>
+                            <td>Sarah Njeri</td>
+                            <td>Portland Cement</td>
+                            <td>200 bags</td>
+                            <td>$2,598.00</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-1041</td>
+                            <td>Yesterday, 11:20 AM</td>
+                            <td>James Mwangi</td>
+                            <td>Rapid Hardening Cement</td>
+                            <td>150 bags</td>
+                            <td>$2,398.50</td>
+                            <td><span class="status-badge cancelled">Cancelled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/cement-dashboard.js"></script>
+</body>
+</html>

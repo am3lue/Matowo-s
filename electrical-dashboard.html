@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Department - Matowo Hardware</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/electrical-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Matowo Hardware</h3>
+            </div>
+            <div class="sidebar-user">
+                <img src="images/user-avatar.png" alt="User Avatar" onerror="this.src='https://via.placeholder.com/80'">
+                <p>James Kimani</p>
+                <span class="user-role">Electrical Department</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Inventory</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="#"><i class="fas fa-truck"></i> Orders</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="logout"><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search electrical products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="notification-icon"><i class="fas fa-bell"></i><span class="badge">3</span></a>
+                    <a href="#" class="message-icon"><i class="fas fa-envelope"></i><span class="badge">2</span></a>
+                </div>
+            </div>
+
+            <div class="dashboard-header">
+                <h1>Electrical Department Dashboard</h1>
+                <p>Manage electrical products, track inventory, and monitor sales</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon sales-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Today's Sales</h3>
+                        <p class="stat-value">$2,890</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 15% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inventory-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Stock</h3>
+                        <p class="stat-value">2,456 items</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orders-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Orders</h3>
+                        <p class="stat-value">18</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 5% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Customers Today</h3>
+                        <p class="stat-value">35</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 10% from yesterday</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Electrical Sales by Category</h3>
+                    <canvas id="electricalCategoryChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Sales Trend</h3>
+                    <canvas id="weeklySalesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Electrical Products Section -->
+            <div class="cement-products-section">
+                <div class="section-header">
+                    <h2>Electrical Products</h2>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</button>
+                </div>
+                
+                <div class="cement-products-grid">
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/electrical-1.jpg" alt="LED Bulbs" onerror="this.src='https://via.placeholder.com/150?text=LED+Bulbs'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>LED Bulbs</h3>
+                            <p class="product-type">12W Energy Saving</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $4.99 each</p>
+                                <p><span>Stock:</span> 350 units</p>
+                                <p><span>Reorder at:</span> 50 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/electrical-2.jpg" alt="Circuit Breakers" onerror="this.src='https://via.placeholder.com/150?text=Circuit+Breakers'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Circuit Breakers</h3>
+                            <p class="product-type">30A Single Pole</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $12.99 each</p>
+                                <p><span>Stock:</span> 200 units</p>
+                                <p><span>Reorder at:</span> 40 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/electrical-3.jpg" alt="Electrical Wire" onerror="this.src='https://via.placeholder.com/150?text=Electrical+Wire'">
+                            <span class="stock-badge low-stock">Low Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Electrical Wire</h3>
+                            <p class="product-type">2.5mm² Copper - 100m</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $45.99 per roll</p>
+                                <p><span>Stock:</span> 25 rolls</p>
+                                <p><span>Reorder at:</span> 30 rolls</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/electrical-4.jpg" alt="Power Sockets" onerror="this.src='https://via.placeholder.com/150?text=Power+Sockets'">
+                            <span class="stock-badge out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Power Sockets</h3>
+                            <p class="product-type">Double Socket - 13A</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $8.99 each</p>
+                                <p><span>Stock:</span> 0 units</p>
+                                <p><span>Reorder at:</span> 50 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary disabled"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Sales Table -->
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Recent Electrical Sales</h3>
+                    <a href="#" class="view-all">View All Sales</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2023-2045</td>
+                            <td>Today, 11:30 AM</td>
+                            <td>Samuel Maina</td>
+                            <td>LED Bulbs</td>
+                            <td>100 units</td>
+                            <td>$499.00</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2044</td>
+                            <td>Today, 9:45 AM</td>
+                            <td>Jane Wairimu</td>
+                            <td>Circuit Breakers</td>
+                            <td>50 units</td>
+                            <td>$649.50</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2043</td>
+                            <td>Yesterday, 3:15 PM</td>
+                            <td>Michael Otieno</td>
+                            <td>Electrical Wire</td>
+                            <td>10 rolls</td>
+                            <td>$459.90</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2042</td>
+                            <td>Yesterday, 1:20 PM</td>
+                            <td>Grace Mutua</td>
+                            <td>Power Sockets</td>
+                            <td>75 units</td>
+                            <td>$674.25</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2041</td>
+                            <td>Yesterday, 10:10 AM</td>
+                            <td>Daniel Kiprop</td>
+                            <td>LED Bulbs</td>
+                            <td>200 units</td>
+                            <td>$998.00</td>
+                            <td><span class="status-badge cancelled">Cancelled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/electrical-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Department - Matowo Hardware</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/plumbing-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Matowo Hardware</h3>
+            </div>
+            <div class="sidebar-user">
+                <img src="images/user-avatar.png" alt="User Avatar" onerror="this.src='https://via.placeholder.com/80'">
+                <p>Samuel Waweru</p>
+                <span class="user-role">Plumbing Department</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Inventory</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="#"><i class="fas fa-truck"></i> Orders</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="logout"><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search plumbing products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="notification-icon"><i class="fas fa-bell"></i><span class="badge">4</span></a>
+                    <a href="#" class="message-icon"><i class="fas fa-envelope"></i><span class="badge">2</span></a>
+                </div>
+            </div>
+
+            <div class="dashboard-header">
+                <h1>Plumbing Department Dashboard</h1>
+                <p>Manage plumbing supplies, track inventory, and monitor installations</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon sales-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Today's Sales</h3>
+                        <p class="stat-value">$1,950</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 5% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inventory-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Products</h3>
+                        <p class="stat-value">328 items</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 2% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orders-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Orders</h3>
+                        <p class="stat-value">15</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 3% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Installations</h3>
+                        <p class="stat-value">8 active</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 20% from yesterday</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Plumbing Sales by Category</h3>
+                    <canvas id="plumbingCategoryChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Sales Trend</h3>
+                    <canvas id="weeklySalesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Plumbing Products Section -->
+            <div class="plumbing-products-section">
+                <div class="section-header">
+                    <h2>Plumbing Products</h2>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Product</button>
+                </div>
+                
+                <div class="plumbing-products-grid">
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/plumbing-pipe.jpg" alt="PVC Pipes" onerror="this.src='https://via.placeholder.com/150?text=PVC+Pipes'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>PVC Pipes</h3>
+                            <p class="product-type">1-inch diameter - 10ft length</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $8.99 each</p>
+                                <p><span>Stock:</span> 120 units</p>
+                                <p><span>Reorder at:</span> 30 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/plumbing-faucet.jpg" alt="Kitchen Faucet" onerror="this.src='https://via.placeholder.com/150?text=Kitchen+Faucet'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Kitchen Faucet</h3>
+                            <p class="product-type">Stainless Steel - Premium</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $79.99 each</p>
+                                <p><span>Stock:</span> 35 units</p>
+                                <p><span>Reorder at:</span> 10 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/plumbing-toilet.jpg" alt="Toilet Set" onerror="this.src='https://via.placeholder.com/150?text=Toilet+Set'">
+                            <span class="stock-badge low-stock">Low Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Toilet Set</h3>
+                            <p class="product-type">Ceramic - Water Efficient</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $149.99 each</p>
+                                <p><span>Stock:</span> 8 units</p>
+                                <p><span>Reorder at:</span> 10 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/plumbing-shower.jpg" alt="Shower Head" onerror="this.src='https://via.placeholder.com/150?text=Shower+Head'">
+                            <span class="stock-badge out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Shower Head</h3>
+                            <p class="product-type">Rainfall - High Pressure</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $45.99 each</p>
+                                <p><span>Stock:</span> 0 units</p>
+                                <p><span>Reorder at:</span> 15 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary disabled"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Sales Table -->
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Recent Plumbing Sales</h3>
+                    <a href="#" class="view-all">View All Sales</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2023-3045</td>
+                            <td>Today, 2:15 PM</td>
+                            <td>Joseph Kariuki</td>
+                            <td>PVC Pipes</td>
+                            <td>20 units</td>
+                            <td>$179.80</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-3044</td>
+                            <td>Today, 11:30 AM</td>
+                            <td>Alice Waithera</td>
+                            <td>Kitchen Faucet</td>
+                            <td>2 units</td>
+                            <td>$159.98</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-3043</td>
+                            <td>Yesterday, 5:20 PM</td>
+                            <td>Daniel Mwangi</td>
+                            <td>Toilet Set</td>
+                            <td>1 unit</td>
+                            <td>$149.99</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-3042</td>
+                            <td>Yesterday, 3:45 PM</td>
+                            <td>Faith Wangari</td>
+                            <td>PVC Pipes</td>
+                            <td>50 units</td>
+                            <td>$449.50</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-3041</td>
+                            <td>Yesterday, 10:15 AM</td>
+                            <td>George Ochieng</td>
+                            <td>Shower Head</td>
+                            <td>5 units</td>
+                            <td>$229.95</td>
+                            <td><span class="status-badge cancelled">Cancelled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/plumbing-dashboard.js"></script>
+</body>
+</html>

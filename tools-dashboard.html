@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Department - Matowo Hardware</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/tools-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Matowo Hardware</h3>
+            </div>
+            <div class="sidebar-user">
+                <img src="images/jane-smith-avatar.png" alt="Jane Smith Avatar" onerror="this.src='https://via.placeholder.com/80'">
+                <p>Jane Smith</p>
+                <span class="user-role">Tools Department</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Inventory</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Sales</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Reports</a></li>
+                <li><a href="#"><i class="fas fa-truck"></i> Orders</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="logout"><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search tools...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="notification-icon"><i class="fas fa-bell"></i><span class="badge">5</span></a>
+                    <a href="#" class="message-icon"><i class="fas fa-envelope"></i><span class="badge">3</span></a>
+                </div>
+            </div>
+
+            <div class="dashboard-header">
+                <h1>Tools Department Dashboard</h1>
+                <p>Manage tools inventory, track sales, and monitor equipment rentals</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon sales-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Today's Sales</h3>
+                        <p class="stat-value">$2,845</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inventory-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Tools</h3>
+                        <p class="stat-value">487 items</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 3% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orders-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Orders</h3>
+                        <p class="stat-value">18</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 5% from yesterday</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Tool Rentals</h3>
+                        <p class="stat-value">12 active</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 10% from yesterday</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Tool Sales by Category</h3>
+                    <canvas id="toolCategoryChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Sales Trend</h3>
+                    <canvas id="weeklySalesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tools Products Section -->
+            <div class="tools-products-section">
+                <div class="section-header">
+                    <h2>Tools Inventory</h2>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Tool</button>
+                </div>
+                
+                <div class="tools-products-grid">
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/tool-hammer.jpg" alt="Claw Hammer" onerror="this.src='https://via.placeholder.com/150?text=Claw+Hammer'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Claw Hammer</h3>
+                            <p class="product-type">Hand Tools - Stanley</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $15.99 each</p>
+                                <p><span>Stock:</span> 45 units</p>
+                                <p><span>Reorder at:</span> 10 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/tool-drill.jpg" alt="Power Drill" onerror="this.src='https://via.placeholder.com/150?text=Power+Drill'">
+                            <span class="stock-badge in-stock">In Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Power Drill</h3>
+                            <p class="product-type">Power Tools - Bosch</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $89.99 each</p>
+                                <p><span>Stock:</span> 28 units</p>
+                                <p><span>Reorder at:</span> 5 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/tool-saw.jpg" alt="Circular Saw" onerror="this.src='https://via.placeholder.com/150?text=Circular+Saw'">
+                            <span class="stock-badge low-stock">Low Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Circular Saw</h3>
+                            <p class="product-type">Power Tools - DeWalt</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $129.99 each</p>
+                                <p><span>Stock:</span> 4 units</p>
+                                <p><span>Reorder at:</span> 5 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-product-card">
+                        <div class="product-image">
+                            <img src="images/tool-wrench.jpg" alt="Wrench Set" onerror="this.src='https://via.placeholder.com/150?text=Wrench+Set'">
+                            <span class="stock-badge out-of-stock">Out of Stock</span>
+                        </div>
+                        <div class="product-details">
+                            <h3>Wrench Set</h3>
+                            <p class="product-type">Hand Tools - Craftsman</p>
+                            <div class="product-meta">
+                                <p><span>Price:</span> $45.99 per set</p>
+                                <p><span>Stock:</span> 0 units</p>
+                                <p><span>Reorder at:</span> 8 units</p>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="btn btn-primary disabled"><i class="fas fa-shopping-cart"></i> Sell</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Sales Table -->
+            <div class="table-card">
+                <div class="card-header">
+                    <h3>Recent Tool Sales</h3>
+                    <a href="#" class="view-all">View All Sales</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice #</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-2023-2045</td>
+                            <td>Today, 11:45 AM</td>
+                            <td>David Mutua</td>
+                            <td>Power Drill</td>
+                            <td>2 units</td>
+                            <td>$179.98</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2044</td>
+                            <td>Today, 10:20 AM</td>
+                            <td>Lucy Wambui</td>
+                            <td>Claw Hammer</td>
+                            <td>5 units</td>
+                            <td>$79.95</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2043</td>
+                            <td>Yesterday, 3:30 PM</td>
+                            <td>Michael Otieno</td>
+                            <td>Circular Saw</td>
+                            <td>1 unit</td>
+                            <td>$129.99</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2042</td>
+                            <td>Yesterday, 1:15 PM</td>
+                            <td>Grace Njoroge</td>
+                            <td>Tool Set Combo</td>
+                            <td>1 set</td>
+                            <td>$249.99</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV-2023-2041</td>
+                            <td>Yesterday, 10:05 AM</td>
+                            <td>Robert Kimani</td>
+                            <td>Power Drill</td>
+                            <td>3 units</td>
+                            <td>$269.97</td>
+                            <td><span class="status-badge cancelled">Cancelled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/tools-dashboard.js"></script>
+</body>
+</html>

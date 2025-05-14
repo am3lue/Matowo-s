@@ -19,15 +19,15 @@
             <p>Admin User</p>
             <span class="user-role">Administrator</span>
         </div>
-        <ul class="sidebar-menu">
-            <li class="active"><a href="#"><i class="icon-dashboard"></i> Dashboard</a></li>
-            <li><a href="#"><i class="icon-departments"></i> Departments</a></li>
-            <li><a href="#"><i class="icon-users"></i> Users</a></li>
-            <li><a href="#"><i class="icon-inventory"></i> Inventory</a></li>
-            <li><a href="#"><i class="icon-sales"></i> Sales Reports</a></li>
-            <li><a href="#"><i class="icon-settings"></i> Settings</a></li>
-            <li class="logout"><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
-        </ul>
+            <ul class="sidebar-menu">
+                <li class="active admin-priority"><a href="#" id="menu-dashboard"><i class="icon-dashboard"></i> Dashboard</a></li>
+                <li><a href="#" id="menu-departments"><i class="icon-departments"></i> Departments</a></li>
+                <li><a href="#" id="menu-users"><i class="icon-users"></i> Users</a></li>
+                <li><a href="#" id="menu-inventory"><i class="icon-inventory"></i> Inventory</a></li>
+                <li><a href="#" id="menu-sales"><i class="icon-sales"></i> Sales Reports</a></li>
+                <li><a href="#"><i class="icon-settings"></i> Settings</a></li>
+                <li class="logout"><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
+            </ul>
     </div>
 
     <!-- Main Content -->
@@ -104,3 +104,61 @@
             </div>
             <table>
                 <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INV-2023-1001</td>
+                        <td>2024-04-01</td>
+                        <td>Jane Doe</td>
+                        <td>Hammer</td>
+                        <td>10</td>
+                        <td>$150.00</td>
+                        <td><span class="status-badge completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-2023-1002</td>
+                        <td>2024-04-02</td>
+                        <td>John Smith</td>
+                        <td>Drill</td>
+                        <td>5</td>
+                        <td>$300.00</td>
+                        <td><span class="status-badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-2023-1003</td>
+                        <td>2024-04-03</td>
+                        <td>Mary Johnson</td>
+                        <td>Screwdriver Set</td>
+                        <td>15</td>
+                        <td>$225.00</td>
+                        <td><span class="status-badge completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-2023-1004</td>
+                        <td>2024-04-04</td>
+                        <td>James Williams</td>
+                        <td>Wrench</td>
+                        <td>7</td>
+                        <td>$140.00</td>
+                        <td><span class="status-badge cancelled">Cancelled</span></td>
+                    </tr>
+                    <tr>
+                        <td>INV-2023-1005</td>
+                        <td>2024-04-05</td>
+                        <td>Patricia Brown</td>
+                        <td>Toolbox</td>
+                        <td>3</td>
+                        <td>$450.00</td>
+                        <td><span class="status-badge completed">Completed</span></td>
+                    </tr>
+                </tbody>
+            </table>

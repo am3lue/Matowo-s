@@ -59,7 +59,6 @@ Matowo Hardware Management System is a comprehensive web application designed to
 This project is open source and available under the MIT License.
 
 ## Contact
-For questions or support, contact Matowo Hardware at info@matowohardware.co.ke.
-
+For questions or support, contact Matowo Hardware at matowofreeman56@gmail.com
 ---
 Matowo Hardware Management System © 2024

@@ -1,159 +1,44 @@
 /* Plumbing Department Dashboard Specific Styles */
 
-/* Stats Icons Colors */
-.sales-icon {
-    background-color: #4CAF50;
-}
-
-.inventory-icon {
-    background-color: #2196F3;
-}
-
-.orders-icon {
-    background-color: #FF9800;
-}
-
-.users-icon {
-    background-color: #9C27B0;
-}
-
-/* Plumbing Products Section */
-.plumbing-products-section {
-    margin: 2rem 0;
-    padding: 1rem;
-}
-
+/* Section Headers */
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: #4193ff;
+    font-size: 22px;
+    margin: 0;
+}
+
+/* plumbing Products Grid */
+.plumbing-products-section {
+    margin-bottom: 30px;
 }
 
 .plumbing-products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-.plumbing-product-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Product Card */
+.tool-product-card {
+    background: transparent;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #009df8;
+    padding: 15px;
+    margin: 1.5rem;
 }
 
-.product-image {
-    position: relative;
-    height: 200px;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.stock-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    color: white;
-    font-size: 0.8rem;
-}
-
-.in-stock {
-    background-color: #4CAF50;
-}
-
-.low-stock {
-    background-color: #FF9800;
-}
-
-.out-of-stock {
-    background-color: #f44336;
-}
-
-.product-details {
-    padding: 1rem;
-}
-
-.product-details h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.2rem;
-}
-
-.product-type {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.product-meta {
-    margin-bottom: 1rem;
-}
-
-.product-meta p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-}
-
-.product-meta span {
-    font-weight: bold;
-    color: #333;
-}
-
-.product-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.btn-primary {
-    background-color: #2196F3;
-    color: white;
-}
-
-.btn-secondary {
-    background-color: #e0e0e0;
-    color: #696767;
-}
-
-.btn.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* Status Badges */
-.status-badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
-.completed {
-    background-color: #E8F5E9;
-    color: #2E7D32;
-}
-
-.pending {
-    background-color: #FFF3E0;
-    color: #E65100;
-}
-
-.cancelled {
-    background-color: #FFEBEE;
-    color: #C62828;
+.tool-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #d0d0d0;
 }
